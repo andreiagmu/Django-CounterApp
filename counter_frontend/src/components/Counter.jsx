@@ -2,23 +2,33 @@
 import axios from 'axios'
 import '../App.css'
 
+// Constants
+const BASE_URL = 'http://127.0.0.1:8000';
+const API_URL = `${BASE_URL}/api`;
+const ENDPOINTS = {
+  GET_COUNTER: `${API_URL}/get-counter/`,
+  INCREMENT_COUNTER: `${API_URL}/increment-counter/`,
+  DECREMENT_COUNTER: `${API_URL}/decrement-counter/`,
+  RESET_COUNTER: `${API_URL}/reset-counter/`
+};
+
 function Counter() {
   const [counterValue, setCounterValue] = useState(50)
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/get-counter/').then(res => setCounterValue(res.data.value))
+    axios.get(ENDPOINTS.GET_COUNTER).then(res => setCounterValue(res.data.value))
   }, [])
 
   function handleIncrement() {
-    axios.post('http://127.0.0.1:8000/api/increment-counter/').then(res => setCounterValue(res.data.value))
+    axios.post(ENDPOINTS.INCREMENT_COUNTER).then(res => setCounterValue(res.data.value))
   }
 
   function handleDecrement() {
-    axios.post('http://127.0.0.1:8000/api/decrement-counter/').then(res => setCounterValue(res.data.value))
+    axios.post(ENDPOINTS.DECREMENT_COUNTER).then(res => setCounterValue(res.data.value))
   }
 
   function handleReset() {
-    axios.post('http://127.0.0.1:8000/api/reset-counter/').then(res => setCounterValue(res.data.value))
+    axios.post(ENDPOINTS.RESET_COUNTER).then(res => setCounterValue(res.data.value))
   }
 
   return (
