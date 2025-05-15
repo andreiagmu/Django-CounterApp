@@ -6,19 +6,19 @@ function Counter() {
   const [counterValue, setCounterValue] = useState(50)
 
   useEffect(() => {
-    axios.get('/api/get-counter/').then(res => setCounterValue(res.data.value))
-  }, []);
+    axios.get('http://127.0.0.1:8000/api/get-counter/').then(res => setCounterValue(res.data.value))
+  }, [])
 
   function handleIncrement() {
-    axios.post('/api/increment-counter/').then(res => setCounterValue(res.data.value))
+    axios.post('http://127.0.0.1:8000/api/increment-counter/').then(res => setCounterValue(res.data.value))
   }
 
   function handleDecrement() {
-    axios.post('/api/decrement-counter/').then(res => setCounterValue(res.data.value))
+    axios.post('http://127.0.0.1:8000/api/decrement-counter/').then(res => setCounterValue(res.data.value))
   }
 
   function handleReset() {
-    axios.post('/api/reset-counter/').then(res => setCounterValue(res.data.value))
+    axios.post('http://127.0.0.1:8000/api/reset-counter/').then(res => setCounterValue(res.data.value))
   }
 
   return (
