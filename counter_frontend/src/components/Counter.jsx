@@ -36,7 +36,7 @@ function Counter() {
         <button className='bg-red-500 text-white p-4 rounded-lg' onClick={handleDecrement}>Decrement</button>
         <p className='border shadow-md max-w-fit p-6 rounded-lg text-2xl'>Counter Value: {counterValue}</p>
         <button className='bg-blue-500 text-white p-4 rounded-lg' onClick={handleIncrement}>Increment</button>
-        <button className='bg-green-400 p-4 px-10 rounded-lg' onClick={handleReset}>Reset</button>
+        <button className='bg-green-400 text-black p-4 px-10 rounded-lg' onClick={handleReset}>Reset</button>
       </div>
     </>
   )
