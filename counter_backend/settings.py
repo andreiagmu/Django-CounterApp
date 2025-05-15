@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'counter.apps.CounterConfig',
     'rest_framework',
     'corsheaders',
-    'counter',
 ]
 
 MIDDLEWARE = [
